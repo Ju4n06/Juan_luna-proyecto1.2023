@@ -1,0 +1,15 @@
+float array[] = {5.4, 5.39, 5.38, 5.31, 5.21, 5.03, 4.45, 3.95, 2.6, 1.49};
+int n = sizeof(array) / sizeof(array[0]);
+
+float maxNumber = array[0];
+
+for (int i = 1; i < n; i++) {
+  if (array[i] > maxNumber) {
+    maxNumber = array[i];
+  }
+}
+
+// Imprimir el resultado
+Serial.begin(9600);
+Serial.print("El número más grande del vector es: ");
+Serial.println(maxNumber);

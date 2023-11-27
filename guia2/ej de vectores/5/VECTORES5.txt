@@ -1,0 +1,28 @@
+int ledPin1 = 2; 
+int ledPin2 = 3; 
+
+int secuencia1[] = {1, 0, 0, 1, 1, 0, 1, 1}; 
+int secuencia2[] = {0, 1, 0, 1, 0, 0, 1, 0}; 
+int largo = sizeof(secuencia1) / sizeof(secuencia1[0]);
+int actual = 0; 
+
+void setup() {
+  pinMode(ledPin1, OUTPUT); 
+  pinMode(ledPin2, OUTPUT); 
+}
+
+void loop() {
+  int actual1 = secuencia1[actual]; 
+  int actual2 = secuencia2[actual]; 
+
+  digitalWrite(ledPin1, actual1); 
+  digitalWrite(ledPin2, actual2); 
+
+  actual++;
+
+  if (actual >= largo) {
+    actual = 0;
+  }
+
+  delay(1000); 
+}

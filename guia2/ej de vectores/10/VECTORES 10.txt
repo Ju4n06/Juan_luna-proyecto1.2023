@@ -1,0 +1,26 @@
+const int buzzerPin = 9; 
+
+int numeros[10];
+
+void setup() {
+  Serial.begin(9600); 
+  pinMode(buzzerPin, OUTPUT); 
+}
+
+void loop() {
+  for (int i = 0; i < 10; i++) {
+    numeros[i] = random(1, 11); 
+    Serial.print(numeros[i]);
+    Serial.print(" ");
+
+    if (numeros[i] == 5) {
+      digitalWrite(buzzerPin, HIGH);
+      delay(500); 
+      digitalWrite(buzzerPin, LOW);
+    }
+  }
+
+  Serial.println(); 
+
+  delay(2000);
+}

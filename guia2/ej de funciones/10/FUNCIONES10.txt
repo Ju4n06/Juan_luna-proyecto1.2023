@@ -1,0 +1,16 @@
+void configurarPines() {
+  pinMode(2, INPUT); 
+  pinMode(13, OUTPUT);
+}
+
+void setup() {
+  configurarPines(); // Llama a la función para configurar los pines
+
+ 
+}
+
+void loop() {
+ 
+}
+
+(LO HICE SIMPLE PORQUE NO ME QUEDO CLARO SI HABIA QUE HACER ALGO FUERA DE LO NORMAL)

@@ -1,0 +1,23 @@
+int vector[5]; // Declaración del vector vacío
+
+void llenarVector() {
+  for (int i = 0; i < 5; i++) {
+    vector[i] = random(11) * 10;
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  randomSeed(analogRead(A0)); 
+
+  llenarVector();
+
+  
+  for (int i = 0; i < 5; i++) {
+    Serial.println(vector[i]);
+  }
+}
+
+void loop() {
+
+}

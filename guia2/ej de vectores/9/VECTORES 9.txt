@@ -1,0 +1,33 @@
+const int ledPinR = 9; 
+const int ledPinG = 10; 
+const int ledPinB = 11; 
+
+int L1[] = {122, 234, 21}; 
+int L2[] = {33, 53, 155}; 
+int L3[] = {200, 255, 12}; 
+
+void setup() {
+  pinMode(ledPinR, OUTPUT);
+  pinMode(ledPinG, OUTPUT);
+  pinMode(ledPinB, OUTPUT);
+}
+
+void loop() {
+  
+  mostrarColor(L1);
+  delay(2000);
+
+  
+  mostrarColor(L2);
+  delay(2000); 
+
+
+  mostrarColor(L3);
+  delay(2000); 
+}
+
+void mostrarColor(int color[]) {
+  analogWrite(ledPinR, color[0]);
+  analogWrite(ledPinG, color[1]);
+  analogWrite(ledPinB, color[2]);
+}

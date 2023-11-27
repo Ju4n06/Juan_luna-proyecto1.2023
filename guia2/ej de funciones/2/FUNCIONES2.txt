@@ -1,0 +1,26 @@
+#include <NewPing.h>
+
+const int triggerPin = 2; 
+const int echoPin = 3; 
+
+NewPing sonar(triggerPin, echoPin);
+
+int obtenerDistancia() {
+  delay(50);
+  int distancia = sonar.ping_cm();
+  return distancia;
+}
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int distancia = obtenerDistancia();
+  Serial.print("Distancia: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
+  delay(1000);
+}
+
+(ESTE LO SAQUE DE MI PROYECTO)

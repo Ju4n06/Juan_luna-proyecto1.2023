@@ -1,0 +1,15 @@
+int vector[] = {2, 6, 10, 11};
+
+for (int i = 0; i < sizeof(vector) / sizeof(vector[0]); i++) {
+  Serial.print("Múltiplos de ");
+  Serial.print(vector[i]);
+  Serial.print(": ");
+
+  for (int j = 1; j <= 5; j++) {
+    int multiplo = vector[i] * j;
+    Serial.print(multiplo);
+    Serial.print(" ");
+  }
+
+  Serial.println();
+}

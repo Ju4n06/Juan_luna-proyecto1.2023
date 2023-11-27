@@ -1,0 +1,23 @@
+bool esMultiplo(int numero, int multiplo) {
+  if (numero % multiplo == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  int numero = 7;
+  int multiplo = 2;
+
+  if (esMultiplo(numero, multiplo)) {
+    Serial.println("El numero es multiplo del otro");
+  } else {
+    Serial.println("El numero no es multiplo del otro");
+  }
+}
+
+void loop() {
+  
+}

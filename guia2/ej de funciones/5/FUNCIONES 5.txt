@@ -1,0 +1,13 @@
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int cantidadLados = 6; // Cantidad de lados del dado
+  int resultado = lanzarDado(cantidadLados);
+  
+  Serial.print("El resultado del lanzamiento del dado es: ");
+  Serial.println(resultado);
+  
+  delay(1000); // Pequeña pausa entre lanzamientos
+}

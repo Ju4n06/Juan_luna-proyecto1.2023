@@ -1,0 +1,42 @@
+const int ledPin = 2; 
+const int buttonPin = 3; 
+const int largo = 5; 
+int secuencia[largo]; 
+int actual = 0; 
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP); 
+  Serial.begin(9600); 
+}
+
+void loop() {
+  
+  digitalWrite(ledPin, HIGH);
+  while (digitalRead(buttonPin) == HIGH) {
+   
+  }
+
+  
+  while (digitalRead(buttonPin) == LOW) {
+    
+  }
+
+  digitalWrite(ledPin, LOW);
+  secuencia[actual] = digitalRead(buttonPin);
+  actual++;
+
+
+  if (actual >= largo) {
+   
+    for (int i = 0; i < largo; i++) {
+      Serial.print(secuencia[i]);
+      Serial.print(" ");
+    }
+    Serial.println();
+
+    
+    actual = 0;
+    memset(secuencia, 0, sizeof(secuencia));
+  }
+}

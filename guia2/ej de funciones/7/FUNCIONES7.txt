@@ -1,0 +1,28 @@
+void ordenarNumeros(int numeros[], int totalNumeros) {
+  for (int i = 0; i < totalNumeros - 1; i++) {
+    for (int j = i + 1; j < totalNumeros; j++) {
+      if (numeros[i] < numeros[j]) {
+        int temp = numeros[i];
+        numeros[i] = numeros[j];
+        numeros[j] = temp;
+      }
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  
+  int numeros[] = {5, 2, 8, 1, 9};
+  int totalNumeros = sizeof(numeros) / sizeof(numeros[0]);
+
+  ordenarNumeros(numeros, totalNumeros);
+
+  for (int i = 0; i < totalNumeros; i++) {
+    Serial.println(numeros[i]);
+  }
+}
+
+void loop() {
+ 
+}

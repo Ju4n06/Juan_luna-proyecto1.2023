@@ -1,0 +1,26 @@
+int ledPin = 13; 
+int secuencia[] = {1, 0, 0, 1, 1, 0, 1, 1}; 
+int largo = sizeof(secuencia) / sizeof(secuencia[0]); 
+int actual = 0; 
+
+void setup() {
+  pinMode(ledPin, OUTPUT); 
+}
+
+void loop() {
+  int recorrido = secuencia[actual]; 
+
+  if (recorrido == 1) {
+    digitalWrite(ledPin, HIGH); 
+  } else {
+    digitalWrite(ledPin, LOW); 
+  }
+
+  actual++; 
+
+  if (actual >= largo) {
+    actual = 0; 
+  }
+
+  delay(1000);
+}

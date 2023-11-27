@@ -1,0 +1,51 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(2,3,4,5,6,7);
+
+
+void setup() {
+  lcd.begin(16, 2);
+  
+  
+  mostrarMensaje("¡Bienvenido!");
+  delay(2000);
+  
+
+  mostrarMensaje("Inicio de juego");
+  delay(2000);
+  
+
+  int puntuacion = generarPuntuacionAleatoria();
+  
+  
+  mostrarPuntuacion(puntuacion);
+  delay(2000);
+  
+  
+  mostrarMensaje("Fin de juego");
+}
+
+void loop() {
+  
+}
+
+
+void mostrarMensaje(String mensaje) {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(mensaje);
+}
+
+
+int generarPuntuacionAleatoria() {
+  return random(0, 100);
+}
+
+
+void mostrarPuntuacion(int puntuacion) {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Puntuacion:");
+  lcd.setCursor(0, 1);
+  lcd.print(puntuacion);
+}
